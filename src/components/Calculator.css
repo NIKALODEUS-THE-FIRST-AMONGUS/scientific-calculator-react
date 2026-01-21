@@ -4,27 +4,31 @@
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  padding: clamp(5px, 2vw, 15px);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .calculator {
   background: linear-gradient(145deg, #2c2c2c 0%, #1a1a1a 100%);
   border: 3px solid #0a0a0a;
-  border-radius: 20px;
-  padding: 20px;
-  width: 320px;
+  border-radius: clamp(12px, 3vw, 20px);
+  padding: clamp(15px, 4vw, 25px);
+  width: min(450px, 95vw);
+  max-width: 500px;
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   position: relative;
+  box-sizing: border-box;
 }
 
 .calculator-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
-  padding: 0 5px;
+  margin-bottom: clamp(8px, 2vw, 15px);
+  padding: 0 clamp(2px, 1vw, 5px);
 }
 
 .brand-info {
@@ -32,7 +36,7 @@
 }
 
 .brand-logo {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 4vw, 1.4rem);
   font-weight: bold;
   letter-spacing: 2px;
   color: #ffffff;
@@ -40,15 +44,15 @@
 }
 
 .model-number {
-  font-size: 0.75rem;
+  font-size: clamp(0.6rem, 2.5vw, 0.75rem);
   margin-top: 2px;
   opacity: 0.8;
   color: #cccccc;
 }
 
 .solar-panel {
-  width: 65px;
-  height: 18px;
+  width: clamp(50px, 15vw, 65px);
+  height: clamp(12px, 4vw, 18px);
   background: linear-gradient(45deg, #8B4513 0%, #654321 100%);
   border-radius: 3px;
   border: 1px solid #333;
@@ -75,57 +79,156 @@
 .tech-label {
   text-align: right;
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: clamp(0.6rem, 2.5vw, 0.8rem);
   font-weight: bold;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
-  padding-right: 5px;
+  letter-spacing: clamp(1px, 0.5vw, 3px);
+  margin-bottom: clamp(8px, 2vw, 15px);
+  padding-right: clamp(2px, 1vw, 5px);
   text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .calculator-buttons {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: clamp(4px, 1.5vw, 8px);
 }
 
 .button-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  height: 45px;
+  gap: clamp(4px, 2vw, 10px);
+  height: clamp(45px, 12vw, 60px);
 }
 
 .button-row:first-child {
   grid-template-columns: repeat(4, 1fr);
-  height: 35px;
+  height: clamp(38px, 10vw, 50px);
 }
 
-/* Responsive Design */
+/* Ultra-responsive breakpoints */
+
+/* Small phones (320px - 480px) */
 @media (max-width: 480px) {
+  .calculator-container {
+    padding: 5px;
+    align-items: center;
+    padding-top: 10px;
+  }
+  
   .calculator {
-    width: 300px;
-    padding: 15px;
+    width: min(380px, 98vw);
+    padding: 12px;
+    border-radius: 12px;
   }
   
   .button-row {
-    height: 40px;
-    gap: 6px;
+    height: clamp(40px, 11vw, 50px);
+    gap: 4px;
   }
   
   .button-row:first-child {
-    height: 32px;
+    height: clamp(32px, 9vw, 40px);
   }
 }
 
-@media (max-width: 360px) {
+/* Large phones (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
   .calculator {
-    width: 280px;
-    padding: 12px;
+    width: min(420px, 90vw);
+    padding: 18px;
   }
   
   .button-row {
-    height: 38px;
-    gap: 5px;
+    height: clamp(50px, 10vw, 65px);
+    gap: 8px;
+  }
+  
+  .button-row:first-child {
+    height: clamp(40px, 8vw, 52px);
+  }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .calculator {
+    width: min(450px, 70vw);
+    padding: 22px;
+  }
+  
+  .button-row {
+    height: clamp(55px, 8vw, 70px);
+    gap: 10px;
+  }
+  
+  .button-row:first-child {
+    height: clamp(44px, 6vw, 56px);
+  }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+  .calculator {
+    width: 500px;
+    padding: 28px;
+  }
+  
+  .button-row {
+    height: 65px;
+    gap: 12px;
+  }
+  
+  .button-row:first-child {
+    height: 52px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .calculator-container {
+    align-items: flex-start;
+    padding-top: 5px;
+    min-height: auto;
+  }
+  
+  .calculator {
+    width: min(280px, 45vw);
+    padding: 6px;
+  }
+  
+  .button-row {
+    height: clamp(25px, 6vh, 35px);
+    gap: 2px;
+  }
+  
+  .button-row:first-child {
+    height: clamp(20px, 5vh, 28px);
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1400px) {
+  .calculator {
+    width: 420px;
+    padding: 28px;
+  }
+  
+  .button-row {
+    height: 60px;
+    gap: 12px;
+  }
+  
+  .button-row:first-child {
+    height: 48px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .calculator {
+    border-width: 2px;
+  }
+  
+  .solar-panel {
+    border-width: 0.5px;
   }
 }

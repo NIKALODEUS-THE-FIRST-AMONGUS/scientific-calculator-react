@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Display.css';
 
-const Display = ({ currentView, modes, menuSelection, selectedMode, value, expression, hasMemory }) => {
+const Display = ({ currentView, modes, menuSelection, selectedMode, value, expression, hasMemory, angleMode, equationStep, equationCoeffs, tableResults }) => {
   
   if (currentView === 'menu') {
     // Main Menu View
@@ -70,7 +70,7 @@ const Display = ({ currentView, modes, menuSelection, selectedMode, value, expre
           >
             M
           </motion.div>
-          <span className="deg-indicator">DEG</span>
+          <span className="deg-indicator">{angleMode || 'DEG'}</span>
           <span className="fix-indicator">FIX</span>
         </div>
       </div>
@@ -83,7 +83,7 @@ const Display = ({ currentView, modes, menuSelection, selectedMode, value, expre
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.15 }}
       >
-        {selectedMode === 0 ? value : getModeDisplay(selectedMode, value)}
+        {selectedMode === 0 ? value : getModeDisplay(selectedMode, value, equationStep, equationCoeffs, tableResults)}
       </motion.div>
       
       {/* Expression/status line */}
@@ -92,30 +92,44 @@ const Display = ({ currentView, modes, menuSelection, selectedMode, value, expre
         animate={{ opacity: expression ? 1 : 0.7 }}
         transition={{ duration: 0.2 }}
       >
-        {selectedMode === 0 ? (expression || 'Ready') : getModeStatus(selectedMode)}
+        {selectedMode === 0 ? (expression || 'Ready') : getModeStatus(selectedMode, equationStep, tableResults)}
       </motion.div>
     </motion.div>
   );
 };
 
 // Helper functions for different modes
-const getModeDisplay = (modeIndex, value) => {
+const getModeDisplay = (modeIndex, value, equationStep, equationCoeffs, tableResults) => {
   switch (modeIndex) {
     case 1: // Equation
-      return 'X = ?';
+      if (equationStep === 0) return 'Enter a:';
+      if (equationStep === 1) return `a=${equationCoeffs.a}, Enter b:`;
+      if (equationStep === 2) return `a=${equationCoeffs.a}, b=${equationCoeffs.b}, Enter c:`;
+      if (equationStep === 3) return value; // Show solution
+      return 'ax² + bx + c = 0';
     case 2: // Table
-      return 'f(x) = ';
+      if (tableResults && tableResults.length > 0) {
+        return `X=${tableResults[0].x}, Y=${tableResults[0].y}`;
+      }
+      return 'Y = X² + 2X + 1';
     default:
       return value;
   }
 };
 
-const getModeStatus = (modeIndex) => {
+const getModeStatus = (modeIndex, equationStep, tableResults) => {
   switch (modeIndex) {
     case 1: // Equation
-      return 'Enter equation';
+      if (equationStep === 0) return 'Coefficient a';
+      if (equationStep === 1) return 'Coefficient b';
+      if (equationStep === 2) return 'Coefficient c';
+      if (equationStep === 3) return 'Solution found';
+      return 'Quadratic solver';
     case 2: // Table
-      return 'Define function';
+      if (tableResults && tableResults.length > 0) {
+        return `${tableResults.length} values calculated`;
+      }
+      return 'Function table';
     default:
       return 'Ready';
   }

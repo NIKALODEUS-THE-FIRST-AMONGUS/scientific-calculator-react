@@ -1,35 +1,36 @@
 .display-section {
   background: linear-gradient(145deg, #1a2e1a 0%, #0f1a0f 100%);
   border: 3px solid #000;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 20px;
-  min-height: 120px;
+  border-radius: clamp(4px, 2vw, 8px);
+  padding: clamp(10px, 4vw, 16px);
+  margin-bottom: clamp(15px, 5vw, 25px);
+  min-height: clamp(100px, 30vw, 140px);
   box-shadow: 
     inset 0 2px 8px rgba(0,0,0,0.6),
     0 1px 0 rgba(255,255,255,0.1);
   font-family: 'Courier New', 'LCD', monospace;
   position: relative;
+  box-sizing: border-box;
 }
 
 /* Menu View Styles */
 .menu-header {
   background: #7fb87f;
   color: #000;
-  padding: 4px 8px;
+  padding: clamp(2px, 1.5vw, 4px) clamp(4px, 2vw, 8px);
   border-radius: 3px;
-  margin-bottom: 8px;
+  margin-bottom: clamp(4px, 2vw, 8px);
   text-align: center;
   font-weight: bold;
-  font-size: 0.7rem;
+  font-size: clamp(0.5rem, 2.5vw, 0.7rem);
   box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .menu-list {
   background: #7fb87f;
   border-radius: 4px;
-  padding: 6px;
-  margin-bottom: 6px;
+  padding: clamp(3px, 2vw, 6px);
+  margin-bottom: clamp(3px, 1.5vw, 6px);
   box-shadow: 
     inset 0 1px 2px rgba(0,0,0,0.2),
     0 1px 0 rgba(255,255,255,0.1);
@@ -38,12 +39,12 @@
 .menu-option {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 3px 6px;
+  gap: clamp(3px, 1.5vw, 6px);
+  padding: clamp(2px, 1vw, 3px) clamp(3px, 1.5vw, 6px);
   border-radius: 2px;
-  font-size: 0.6rem;
+  font-size: clamp(0.45rem, 2.2vw, 0.6rem);
   font-weight: 600;
-  margin-bottom: 2px;
+  margin-bottom: clamp(1px, 0.5vw, 2px);
   transition: all 0.2s ease;
   position: relative;
 }
@@ -63,24 +64,24 @@
 }
 
 .menu-number {
-  font-size: 0.55rem;
-  min-width: 12px;
+  font-size: clamp(0.4rem, 2vw, 0.55rem);
+  min-width: clamp(8px, 3vw, 12px);
 }
 
 .menu-icon {
-  font-size: 0.6rem;
+  font-size: clamp(0.45rem, 2.2vw, 0.6rem);
 }
 
 .menu-name {
   flex: 1;
-  font-size: 0.55rem;
+  font-size: clamp(0.4rem, 2vw, 0.55rem);
 }
 
 .dev-badge {
   background: #ff6b35;
   color: white;
-  font-size: 0.4rem;
-  padding: 1px 3px;
+  font-size: clamp(0.3rem, 1.5vw, 0.4rem);
+  padding: 1px clamp(2px, 1vw, 3px);
   border-radius: 2px;
   font-weight: bold;
 }
@@ -88,10 +89,10 @@
 .menu-instructions {
   background: #7fb87f;
   color: #000;
-  padding: 2px 6px;
+  padding: clamp(1px, 0.5vw, 2px) clamp(3px, 1.5vw, 6px);
   border-radius: 2px;
   text-align: center;
-  font-size: 0.5rem;
+  font-size: clamp(0.35rem, 1.8vw, 0.5rem);
   font-weight: 600;
   box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
@@ -101,42 +102,42 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
-  height: 20px;
+  margin-bottom: clamp(4px, 2vw, 8px);
+  height: clamp(16px, 5vw, 20px);
 }
 
 .mode-info {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: clamp(3px, 1.5vw, 6px);
   background: #7fb87f;
   color: #000;
-  padding: 3px 8px;
+  padding: clamp(2px, 1vw, 3px) clamp(4px, 2vw, 8px);
   border-radius: 3px;
-  font-size: 0.6rem;
+  font-size: clamp(0.45rem, 2.2vw, 0.6rem);
   font-weight: bold;
   box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .mode-icon {
-  font-size: 0.7rem;
+  font-size: clamp(0.5rem, 2.5vw, 0.7rem);
 }
 
 .mode-name {
-  font-size: 0.6rem;
+  font-size: clamp(0.45rem, 2.2vw, 0.6rem);
 }
 
 .mode-indicators {
   display: flex;
-  gap: 4px;
+  gap: clamp(2px, 1vw, 4px);
 }
 
 .memory-indicator {
   color: #000;
   background: #7fb87f;
-  font-size: 0.5rem;
+  font-size: clamp(0.35rem, 1.8vw, 0.5rem);
   font-weight: bold;
-  padding: 2px 4px;
+  padding: clamp(1px, 0.5vw, 2px) clamp(2px, 1vw, 4px);
   border-radius: 2px;
   font-family: 'Courier New', 'LCD', monospace;
   box-shadow: 0 1px 2px rgba(0,0,0,0.3);
@@ -146,9 +147,9 @@
 .fix-indicator {
   color: #000;
   background: #7fb87f;
-  font-size: 0.45rem;
+  font-size: clamp(0.32rem, 1.6vw, 0.45rem);
   font-weight: bold;
-  padding: 2px 3px;
+  padding: clamp(1px, 0.5vw, 2px) clamp(2px, 1vw, 3px);
   border-radius: 2px;
   font-family: 'Courier New', 'LCD', monospace;
   box-shadow: 0 1px 2px rgba(0,0,0,0.3);
@@ -157,20 +158,20 @@
 .display {
   color: #000;
   background: #7fb87f;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 7vw, 2.2rem);
   font-weight: bold;
   text-align: right;
-  margin-bottom: 6px;
-  height: 40px;
+  margin-bottom: clamp(4px, 2vw, 8px);
+  height: clamp(35px, 10vw, 50px);
   display: flex;
   align-items: center;
   justify-content: flex-end;
   overflow: hidden;
   white-space: nowrap;
   font-family: 'Courier New', 'LCD', monospace;
-  padding: 4px 8px;
+  padding: clamp(3px, 1.5vw, 6px) clamp(6px, 3vw, 12px);
   border-radius: 4px;
-  letter-spacing: 2px;
+  letter-spacing: clamp(1px, 0.5vw, 2px);
   box-shadow: 
     inset 0 2px 4px rgba(0,0,0,0.2),
     0 1px 0 rgba(255,255,255,0.1);
@@ -179,63 +180,133 @@
 .expression {
   color: #000;
   background: #7fb87f;
-  font-size: 0.7rem;
+  font-size: clamp(0.5rem, 2.5vw, 0.7rem);
   text-align: right;
-  height: 18px;
+  height: clamp(12px, 4vw, 18px);
   display: flex;
   align-items: center;
   justify-content: flex-end;
   font-family: 'Courier New', 'LCD', monospace;
-  padding: 2px 8px;
+  padding: clamp(1px, 0.5vw, 2px) clamp(4px, 2vw, 8px);
   border-radius: 3px;
-  letter-spacing: 1px;
+  letter-spacing: clamp(0.5px, 0.3vw, 1px);
   box-shadow: 
     inset 0 1px 2px rgba(0,0,0,0.2),
     0 1px 0 rgba(255,255,255,0.1);
 }
 
-/* Responsive adjustments */
+/* Small phones (320px - 480px) */
 @media (max-width: 480px) {
   .display-section {
-    padding: 10px;
-    min-height: 110px;
+    padding: 6px;
+    min-height: 70px;
+    border-width: 2px;
   }
   
   .display {
-    font-size: 1.6rem;
-    height: 36px;
+    font-size: clamp(1rem, 5vw, 1.4rem);
+    height: 24px;
+    padding: 2px 6px;
   }
   
   .expression {
-    font-size: 0.65rem;
-    height: 16px;
+    font-size: clamp(0.45rem, 2.2vw, 0.6rem);
+    height: 10px;
+    padding: 1px 6px;
   }
   
-  .menu-option {
-    font-size: 0.55rem;
-  }
-  
-  .mode-info {
-    font-size: 0.55rem;
+  .mode-header {
+    height: 14px;
+    margin-bottom: 4px;
   }
 }
 
-@media (max-width: 360px) {
+/* Large phones (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
   .display-section {
-    min-height: 100px;
+    padding: 10px;
+    min-height: 90px;
   }
   
   .display {
-    font-size: 1.4rem;
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
     height: 32px;
   }
   
   .expression {
-    font-size: 0.6rem;
+    font-size: clamp(0.55rem, 2vw, 0.65rem);
     height: 14px;
   }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .display-section {
+    padding: 12px;
+    min-height: 100px;
+  }
   
-  .menu-option {
-    font-size: 0.5rem;
+  .display {
+    font-size: clamp(1.5rem, 3vw, 1.7rem);
+    height: 36px;
+  }
+  
+  .expression {
+    font-size: clamp(0.6rem, 1.5vw, 0.68rem);
+    height: 16px;
+  }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+  .display-section {
+    padding: 14px;
+    min-height: 120px;
+  }
+  
+  .display {
+    font-size: 1.8rem;
+    height: 40px;
+  }
+  
+  .expression {
+    font-size: 0.7rem;
+    height: 18px;
+  }
+}
+
+/* Landscape mode adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .display-section {
+    min-height: 60px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+  }
+  
+  .display {
+    font-size: clamp(0.9rem, 4vh, 1.2rem);
+    height: clamp(18px, 6vh, 24px);
+  }
+  
+  .expression {
+    font-size: clamp(0.4rem, 2.5vh, 0.55rem);
+    height: clamp(8px, 3vh, 12px);
+  }
+  
+  .mode-header {
+    height: clamp(10px, 4vh, 14px);
+    margin-bottom: 2px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .display-section {
+    border-width: 2px;
+  }
+  
+  .display,
+  .expression {
+    text-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
   }
 }

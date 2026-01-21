@@ -12,7 +12,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
@@ -20,7 +21,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 /* Import Inter font */
