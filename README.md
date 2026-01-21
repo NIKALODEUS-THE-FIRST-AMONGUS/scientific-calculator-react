@@ -1,70 +1,161 @@
-# Getting Started with Create React App
+# SciTech ST-991X Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A beautiful, modern scientific calculator built with React and Framer Motion animations - completely original design.
 
-## Available Scripts
+![Calculator Preview](https://img.shields.io/badge/React-19.2.3-blue) ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12.27.5-purple) ![License](https://img.shields.io/badge/License-MIT-green)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### 🧮 Multi-Mode Calculator System
+- **Calculate Mode**: Full scientific calculator with advanced functions
+- **Spreadsheet Mode**: Grid-based calculations and data analysis
+- **Table Mode**: Function table generation and analysis
+- **Equation Mode**: Quadratic equation solver
+- **Inequality Mode**: Linear inequality solver
+- **Complex Mode**: Complex number calculations (a + bi format)
+- **Base-N Mode**: Number base conversion (BIN, OCT, DEC, HEX)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🔬 Advanced Scientific Functions
+- **Trigonometry**: sin, cos, tan with inverse functions
+- **Hyperbolic**: sinh, cosh, tanh functions
+- **Logarithms**: log, ln, log₂ with exponential functions
+- **Power Functions**: x², x³, xʸ, √, ∛, nth root
+- **Mathematical**: Factorial, reciprocal, absolute value
+- **Constants**: π, e, and other mathematical constants
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 💾 Memory & Storage System
+- **Memory Operations**: Store, recall, add, subtract
+- **Answer Storage**: Previous result recall (Ans)
+- **Variable Storage**: A-F and X-Z variable assignments
+- **Visual Indicators**: Memory status and variable displays
 
-### `npm test`
+### 🎨 Modern Interface Design
+- **Original Branding**: SciTech ST-991X - completely copyright-free
+- **Scrollable Menu**: Horizontal scrolling through 7 calculator modes
+- **Glassmorphism UI**: Modern translucent design with backdrop blur
+- **Framer Motion**: Smooth animations and micro-interactions
+- **Responsive Layout**: Optimized for all screen sizes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ⌨️ Accessibility & Input
+- **Full Keyboard Support**: All calculator functions accessible via keyboard
+- **Mode Toggle**: Switch between basic and scientific modes
+- **Focus Management**: Proper focus indicators for accessibility
+- **Touch Friendly**: Optimized button sizes for mobile interaction
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm or yarn package manager
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/scitech-calculator-react.git
+   cd scitech-calculator-react
+   ```
 
-### `npm run eject`
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Open your browser**
+   Navigate to `http://localhost:3000` to see the calculator in action.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Building for Production
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run build
+```
 
-## Learn More
+This creates an optimized production build in the `build` folder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎮 Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Basic Operations
+- Click number buttons or use keyboard (0-9)
+- Use operator buttons (+, -, ×, ÷) or keyboard (+, -, *, /)
+- Press = or Enter to calculate
+- Use . for decimal points
 
-### Code Splitting
+### Scientific Functions
+- **Toggle Mode**: Click the CPU icon to show/hide scientific functions
+- **Trigonometry**: Enter angle in degrees, then click sin/cos/tan
+- **Logarithms**: Enter number, then click log or ln
+- **Mathematical**: Use √, x², or x! with current display value
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Memory Operations
+- **Store Value**: Enter number, click M+ to add to memory
+- **Recall Value**: Click MR to display stored value
+- **Clear Memory**: Click MC to reset memory to zero
+- **Memory Indicator**: The memory icon glows when memory contains a value
 
-### Analyzing the Bundle Size
+### Keyboard Shortcuts
+| Key | Function |
+|-----|----------|
+| 0-9 | Number input |
+| +, -, *, / | Basic operations |
+| . | Decimal point |
+| Enter, = | Calculate result |
+| Escape | Clear all |
+| Backspace | Clear entry |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🛠️ Technology Stack
 
-### Making a Progressive Web App
+- **React 18.2.0**: Modern React with hooks and functional components
+- **Framer Motion**: Advanced animations and gesture handling
+- **Lucide React**: Beautiful, customizable icons
+- **CSS3**: Modern styling with gradients, backdrop-filter, and grid
+- **JavaScript ES6+**: Modern JavaScript features and best practices
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📱 Responsive Design
 
-### Advanced Configuration
+The calculator automatically adapts to different screen sizes:
+- **Desktop**: Full-featured layout with hover effects
+- **Tablet**: Optimized button spacing and touch targets
+- **Mobile**: Compact layout with touch-friendly interactions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎨 Design Philosophy
 
-### Deployment
+- **Glassmorphism**: Modern translucent design trend
+- **Micro-interactions**: Subtle animations that enhance user experience
+- **Accessibility First**: Keyboard navigation and screen reader support
+- **Performance**: Optimized animations and efficient re-renders
+- **Consistency**: Uniform design language throughout the interface
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🤝 Contributing
 
-### `npm run build` fails to minify
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Development Guidelines
+1. Follow React best practices and hooks patterns
+2. Maintain consistent code formatting
+3. Add appropriate animations for new features
+4. Ensure mobile responsiveness
+5. Test keyboard accessibility
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Framer Motion** for incredible animation capabilities
+- **Lucide** for beautiful, consistent icons
+- **React Team** for the amazing framework
+- **CSS Grid & Flexbox** for layout capabilities
+
+## 📞 Support
+
+If you have any questions or run into issues, please open an issue on GitHub or reach out to the maintainers.
+
+---
+
+**Made with ❤️ and React**

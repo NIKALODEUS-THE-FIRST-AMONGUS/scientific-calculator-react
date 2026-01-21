@@ -1,0 +1,131 @@
+.calculator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.calculator {
+  background: linear-gradient(145deg, #2c2c2c 0%, #1a1a1a 100%);
+  border: 3px solid #0a0a0a;
+  border-radius: 20px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.calculator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 5px;
+}
+
+.brand-info {
+  color: #e0e0e0;
+}
+
+.brand-logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.model-number {
+  font-size: 0.75rem;
+  margin-top: 2px;
+  opacity: 0.8;
+  color: #cccccc;
+}
+
+.solar-panel {
+  width: 65px;
+  height: 18px;
+  background: linear-gradient(45deg, #8B4513 0%, #654321 100%);
+  border-radius: 3px;
+  border: 1px solid #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.solar-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.3) 3px,
+    rgba(0,0,0,0.3) 4px
+  );
+}
+
+.tech-label {
+  text-align: right;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  padding-right: 5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.calculator-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  height: 45px;
+}
+
+.button-row:first-child {
+  grid-template-columns: repeat(4, 1fr);
+  height: 35px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .calculator {
+    width: 300px;
+    padding: 15px;
+  }
+  
+  .button-row {
+    height: 40px;
+    gap: 6px;
+  }
+  
+  .button-row:first-child {
+    height: 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .calculator {
+    width: 280px;
+    padding: 12px;
+  }
+  
+  .button-row {
+    height: 38px;
+    gap: 5px;
+  }
+}
